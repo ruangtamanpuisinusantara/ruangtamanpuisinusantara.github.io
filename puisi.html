@@ -1,1 +1,1388 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Kumpulan Puisi Ruang Taman Puisi Nusantara - Arsip karya puisi dan sastra Nusantara.">
+
+  <meta name="keywords"
+        content="Kumpulan Puisi, RTPN, Ruang Taman Puisi Nusantara, puisi, sastra, penyair Nusantara">
+
+  <meta name="author"
+        content="Ruang Taman Puisi Nusantara">
+
+  <meta name="theme-color"
+        content="#123326">
+
+  <title>Kumpulan Puisi | Ruang Taman Puisi Nusantara</title>
+
+
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+  <style>
+
+    /* ==============================
+       DASAR
+    ============================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: #253128;
+      background: #fbf6e9;
+      line-height: 1.75;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin: auto;
+    }
+
+
+    /* ==============================
+       WARNA
+    ============================== */
+
+    :root {
+      --green-dark: #0b2419;
+      --green: #123326;
+      --green-light: #216044;
+
+      --gold: #d5a64a;
+      --gold-light: #f1d58a;
+
+      --cream: #fbf6e9;
+      --white: #fffdf7;
+
+      --text: #253128;
+      --muted: #68746d;
+    }
+
+
+    /* ==============================
+       NAVBAR
+    ============================== */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+
+      background: rgba(11, 36, 25, 0.96);
+      backdrop-filter: blur(15px);
+
+      border-bottom:
+        1px solid rgba(241, 213, 138, 0.15);
+    }
+
+    .nav-container {
+      min-height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      color: white;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .brand img {
+      width: 44px;
+      height: 44px;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      border: 1px solid var(--gold);
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 25px;
+
+      list-style: none;
+    }
+
+    .nav-menu a {
+      color: rgba(255,255,255,.85);
+
+      font-size: .88rem;
+      font-weight: 600;
+
+      transition: .3s;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu a.active {
+      color: var(--gold-light);
+    }
+
+    .menu-button {
+      display: none;
+
+      border:
+        1px solid rgba(255,255,255,.3);
+
+      background: transparent;
+      color: white;
+
+      padding: 8px 12px;
+
+      border-radius: 8px;
+
+      font-size: 20px;
+
+      cursor: pointer;
+    }
+
+
+    /* ==============================
+       HERO PUISI
+    ============================== */
+
+    .poetry-hero {
+      min-height: 55vh;
+
+      display: flex;
+      align-items: center;
+
+      text-align: center;
+
+      padding:
+        130px 20px 80px;
+
+      color: white;
+
+      background:
+        radial-gradient(
+          circle at 50% 30%,
+          rgba(213,166,74,.18),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #0b2419,
+          #123326 55%,
+          #174632
+        );
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .poetry-hero::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 25px;
+
+      border:
+        1px solid
+        rgba(241,213,138,.15);
+
+      border-radius: 25px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+
+      max-width: 850px;
+
+      margin: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      color: var(--gold-light);
+
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      font-size: .75rem;
+
+      font-weight: 700;
+
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+
+      width: 28px;
+      height: 1px;
+
+      background: var(--gold);
+    }
+
+    .poetry-hero h1 {
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(3rem, 7vw, 5.8rem);
+
+      line-height: 1;
+
+      color: #fffaf0;
+
+      margin-bottom: 20px;
+    }
+
+    .poetry-hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .poetry-hero p {
+      max-width: 700px;
+
+      margin: auto;
+
+      color:
+        rgba(255,255,255,.78);
+
+      font-size: 1.05rem;
+    }
+
+
+    /* ==============================
+       KONTEN
+    ============================== */
+
+    .poetry-section {
+      padding: 80px 0 100px;
+
+      background: var(--cream);
+    }
+
+
+    /* ==============================
+       SEARCH
+    ============================== */
+
+    .tools {
+      max-width: 900px;
+
+      margin:
+        0 auto 45px;
+
+      display: flex;
+
+      gap: 14px;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+    }
+
+    .search-box {
+      flex: 1;
+
+      min-width: 260px;
+
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+
+      padding:
+        15px 20px;
+
+      border:
+        1px solid #ded4bc;
+
+      border-radius: 50px;
+
+      outline: none;
+
+      background: white;
+
+      color: var(--text);
+
+      font-family: "Inter", sans-serif;
+
+      font-size: .95rem;
+
+      transition: .3s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--gold);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(213,166,74,.12);
+    }
+
+
+    /* ==============================
+       FILTER
+    ============================== */
+
+    .filters {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      margin-bottom: 45px;
+    }
+
+    .filter-button {
+      border:
+        1px solid #d8ccb0;
+
+      background: white;
+
+      color: var(--green);
+
+      padding:
+        9px 17px;
+
+      border-radius: 50px;
+
+      cursor: pointer;
+
+      font-family: "Inter", sans-serif;
+
+      font-size: .82rem;
+
+      font-weight: 600;
+
+      transition: .3s;
+    }
+
+    .filter-button:hover,
+    .filter-button.active {
+      background: var(--green);
+
+      color: white;
+
+      border-color: var(--green);
+    }
+
+
+    /* ==============================
+       HEADER SECTION
+    ============================== */
+
+    .section-heading {
+      text-align: center;
+
+      margin-bottom: 40px;
+    }
+
+    .section-heading small {
+      color: var(--green-light);
+
+      text-transform: uppercase;
+
+      letter-spacing: 2.5px;
+
+      font-size: .72rem;
+
+      font-weight: 800;
+    }
+
+    .section-heading h2 {
+      margin-top: 8px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      color: var(--green);
+
+      font-size:
+        clamp(2.3rem, 5vw, 3.7rem);
+    }
+
+
+    /* ==============================
+       GRID PUISI
+    ============================== */
+
+    .poetry-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 24px;
+    }
+
+    .poetry-card {
+      background: white;
+
+      border:
+        1px solid #eee5d2;
+
+      border-radius: 22px;
+
+      padding: 30px 27px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      box-shadow:
+        0 8px 28px
+        rgba(32,45,36,.06);
+
+      transition:
+        transform .3s,
+        box-shadow .3s;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .poetry-card::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 4px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--green),
+          var(--gold)
+        );
+    }
+
+    .poetry-card:hover {
+      transform:
+        translateY(-6px);
+
+      box-shadow:
+        0 18px 40px
+        rgba(32,45,36,.12);
+    }
+
+    .genre {
+      display: inline-block;
+
+      align-self: flex-start;
+
+      padding:
+        5px 12px;
+
+      border-radius: 50px;
+
+      background: #f5f0e3;
+
+      color: var(--green-light);
+
+      font-size: .7rem;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 18px;
+    }
+
+    .poetry-card h3 {
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 2rem;
+
+      line-height: 1.15;
+
+      color: var(--green);
+
+      margin-bottom: 7px;
+    }
+
+    .author {
+      color: var(--gold);
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 1.15rem;
+
+      font-weight: 700;
+
+      margin-bottom: 15px;
+    }
+
+    .excerpt {
+      color: var(--muted);
+
+      font-size: .9rem;
+
+      line-height: 1.7;
+
+      margin-bottom: 22px;
+
+      flex-grow: 1;
+    }
+
+    .read-button {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding:
+        10px 18px;
+
+      border-radius: 50px;
+
+      color: white;
+
+      background: var(--green);
+
+      font-size: .82rem;
+
+      font-weight: 700;
+
+      transition: .3s;
+    }
+
+    .read-button:hover {
+      background: var(--green-light);
+
+      transform:
+        translateY(-2px);
+    }
+
+
+    /* ==============================
+       TIDAK DITEMUKAN
+    ============================== */
+
+    .empty-message {
+      display: none;
+
+      text-align: center;
+
+      padding: 50px 20px;
+
+      color: var(--muted);
+    }
+
+    .empty-message h3 {
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 2rem;
+
+      color: var(--green);
+
+      margin-bottom: 8px;
+    }
+
+
+    /* ==============================
+       CTA
+    ============================== */
+
+    .poetry-cta {
+      margin-top: 70px;
+
+      padding:
+        55px 25px;
+
+      text-align: center;
+
+      border-radius: 25px;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--green),
+          var(--green-light)
+        );
+
+      box-shadow:
+        0 15px 40px
+        rgba(11,36,25,.14);
+    }
+
+    .poetry-cta h2 {
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 2.7rem;
+
+      color: var(--gold-light);
+
+      margin-bottom: 10px;
+    }
+
+    .poetry-cta p {
+      max-width: 650px;
+
+      margin: auto;
+
+      color:
+        rgba(255,255,255,.76);
+    }
+
+
+    /* ==============================
+       FOOTER
+    ============================== */
+
+    footer {
+      padding: 35px 20px;
+
+      text-align: center;
+
+      color:
+        rgba(255,255,255,.65);
+
+      background: #081b12;
+
+      font-size: .85rem;
+    }
+
+    footer strong {
+      color: var(--gold-light);
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+
+    /* ==============================
+       MOBILE
+    ============================== */
+
+    @media(max-width: 900px) {
+
+      .poetry-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media(max-width: 800px) {
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+
+        position: absolute;
+
+        left: 18px;
+        right: 18px;
+
+        top: 65px;
+
+        padding: 18px;
+
+        flex-direction: column;
+
+        gap: 4px;
+
+        background:
+          var(--green-dark);
+
+        border-radius: 14px;
+
+        border:
+          1px solid
+          rgba(255,255,255,.12);
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        display: block;
+
+        padding: 8px;
+      }
+
+    }
+
+
+    @media(max-width: 600px) {
+
+      .poetry-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .poetry-hero {
+        min-height: 50vh;
+
+        padding:
+          120px 20px 65px;
+      }
+
+      .poetry-section {
+        padding:
+          65px 0 80px;
+      }
+
+      .poetry-card {
+        padding: 27px 23px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ==============================
+       NAVIGASI
+  ============================== -->
+
+  <header class="navbar">
+
+    <div class="container nav-container">
+
+      <a href="index.html#beranda"
+         class="brand">
+
+        <img
+          src="RUANG TAMAN PUISI NUSANTARA - UMUM 20260930_131242.jpg"
+          alt="Logo Ruang Taman Puisi Nusantara">
+
+        <span>RTPN</span>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        onclick="toggleMenu()"
+        aria-label="Menu">
+
+        ☰
+
+      </button>
+
+
+      <ul class="nav-menu" id="navMenu">
+
+        <li>
+          <a href="index.html#beranda">
+            Beranda
+          </a>
+        </li>
+
+        <li>
+          <a href="peserta.html">
+            Daftar Peserta
+          </a>
+        </li>
+
+        <li>
+          <a href="puisi.html"
+             class="active">
+            Kumpulan Puisi
+          </a>
+        </li>
+
+        <li>
+          <a href="index.html#profil">
+            Profil
+          </a>
+        </li>
+
+        <li>
+          <a href="index.html#visi-misi">
+            Visi & Misi
+          </a>
+        </li>
+
+        <li>
+          <a href="index.html#perjalanan">
+            Perjalanan
+          </a>
+        </li>
+
+        <li>
+          <a href="index.html#filosofi">
+            Filosofi
+          </a>
+        </li>
+
+        <li>
+          <a href="index.html#pendiri">
+            Pendiri
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==============================
+       HERO
+  ============================== -->
+
+  <section class="poetry-hero">
+
+    <div class="hero-inner">
+
+      <div class="eyebrow">
+        Arsip Sastra RTPN
+      </div>
+
+      <h1>
+        Kumpulan
+        <span>Puisi</span>
+      </h1>
+
+      <p>
+        Sebuah ruang untuk menghimpun, merawat,
+        dan memperkenalkan karya-karya puisi
+        dari para penyair Nusantara.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ==============================
+       KONTEN
+  ============================== -->
+
+  <main>
+
+    <section class="poetry-section">
+
+      <div class="container">
+
+
+        <!-- SEARCH -->
+
+        <div class="tools">
+
+          <div class="search-box">
+
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Cari judul puisi atau nama penyair..."
+              aria-label="Cari puisi">
+
+          </div>
+
+        </div>
+
+
+        <!-- FILTER -->
+
+        <div class="filters">
+
+          <button
+            class="filter-button active"
+            data-filter="semua">
+
+            Semua
+
+          </button>
+
+          <button
+            class="filter-button"
+            data-filter="romansa">
+
+            Romansa
+
+          </button>
+
+          <button
+            class="filter-button"
+            data-filter="elegi">
+
+            Elegi
+
+          </button>
+
+          <button
+            class="filter-button"
+            data-filter="satire">
+
+            Satire
+
+          </button>
+
+          <button
+            class="filter-button"
+            data-filter="sosial">
+
+            Sosial
+
+          </button>
+
+          <button
+            class="filter-button"
+            data-filter="kontemporer">
+
+            Kontemporer
+
+          </button>
+
+        </div>
+
+
+        <!-- JUDUL -->
+
+        <div class="section-heading">
+
+          <small>
+            Koleksi Karya
+          </small>
+
+          <h2>
+            Puisi Pilihan Nusantara
+          </h2>
+
+        </div>
+
+
+        <!-- GRID -->
+
+        <div
+          class="poetry-grid"
+          id="poetryGrid">
+
+
+          <!-- PUISI 1 -->
+
+          <article
+            class="poetry-card"
+            data-category="romansa"
+            data-search="catatan pada sebuah payung mata langit romansa">
+
+            <span class="genre">
+              Romansa
+            </span>
+
+            <h3>
+              Catatan pada Sebuah Payung
+            </h3>
+
+            <div class="author">
+              Oleh: Mata Langit
+            </div>
+
+            <p class="excerpt">
+
+              Sudah terlalu lama aku berjalan
+              bersama reruntuhan, hingga ketika
+              kau datang membawa teduh...
+
+            </p>
+
+            <a
+              href="#"
+              class="read-button">
+
+              Baca Puisi →
+
+            </a>
+
+          </article>
+
+
+          <!-- PUISI 2 -->
+
+          <article
+            class="poetry-card"
+            data-category="elegi"
+            data-search="pada akhirnya aku memilih diriku mata langit elegi">
+
+            <span class="genre">
+              Elegi
+            </span>
+
+            <h3>
+              Pada Akhirnya Aku Memilih Diriku
+            </h3>
+
+            <div class="author">
+              Oleh: Mata Langit
+            </div>
+
+            <p class="excerpt">
+
+              Aku pernah menghabiskan seluruh cara
+              untuk tetap ada, sebelum akhirnya
+              memahami bahwa bertahan bukan
+              selalu berarti tinggal...
+
+            </p>
+
+            <a
+              href="#"
+              class="read-button">
+
+              Baca Puisi →
+
+            </a>
+
+          </article>
+
+
+          <!-- PUISI 3 -->
+
+          <article
+            class="poetry-card"
+            data-category="sosial"
+            data-search="puisi pilihan ruang taman puisi nusantara sosial">
+
+            <span class="genre">
+              Sosial
+            </span>
+
+            <h3>
+              Karya Pilihan Nusantara
+            </h3>
+
+            <div class="author">
+              Oleh: RTPN
+            </div>
+
+            <p class="excerpt">
+
+              Ruang ini akan menjadi tempat
+              bagi karya-karya pilihan penyair
+              dari berbagai penjuru Nusantara.
+
+            </p>
+
+            <a
+              href="#"
+              class="read-button">
+
+              Baca Puisi →
+
+            </a>
+
+          </article>
+
+
+        </div>
+
+
+        <!-- PESAN KOSONG -->
+
+        <div
+          class="empty-message"
+          id="emptyMessage">
+
+          <h3>
+            Puisi Tidak Ditemukan
+          </h3>
+
+          <p>
+            Coba gunakan kata kunci atau kategori
+            yang berbeda.
+          </p>
+
+        </div>
+
+
+        <!-- CTA -->
+
+        <div class="poetry-cta">
+
+          <h2>
+            Menanam Kata, Menumbuhkan Makna
+          </h2>
+
+          <p>
+
+            Ruang Taman Puisi Nusantara hadir
+            untuk menjadi rumah bagi kata,
+            gagasan, dan karya para penyair
+            dari berbagai penjuru Nusantara.
+
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+
+  <footer>
+
+    <p>
+
+      <strong>
+        RUANG TAMAN PUISI NUSANTARA
+      </strong>
+
+    </p>
+
+    <p>
+
+      “Menanam Kata, Menumbuhkan Makna,
+      Merangkai Nusantara.”
+
+    </p>
+
+    <p>
+
+      © 2019–2026 Ruang Taman Puisi Nusantara.
+      Seluruh hak cipta dilindungi.
+
+    </p>
+
+  </footer>
+
+
+  <!-- ==============================
+       JAVASCRIPT
+  ============================== -->
+
+  <script>
+
+    /* MENU HP */
+
+    function toggleMenu() {
+
+      const menu =
+        document.getElementById("navMenu");
+
+      menu.classList.toggle("active");
+
+    }
+
+
+    /* TUTUP MENU */
+
+    document
+      .querySelectorAll(".nav-menu a")
+      .forEach(function(link) {
+
+        link.addEventListener(
+          "click",
+          function() {
+
+            document
+              .getElementById("navMenu")
+              .classList
+              .remove("active");
+
+          }
+        );
+
+      });
+
+
+    /* FILTER + PENCARIAN */
+
+    const searchInput =
+      document.getElementById("searchInput");
+
+    const cards =
+      document.querySelectorAll(".poetry-card");
+
+    const buttons =
+      document.querySelectorAll(".filter-button");
+
+    const emptyMessage =
+      document.getElementById("emptyMessage");
+
+    let currentFilter = "semua";
+
+
+    function filterPoems() {
+
+      const keyword =
+        searchInput.value
+        .toLowerCase()
+        .trim();
+
+      let visibleCount = 0;
+
+
+      cards.forEach(function(card) {
+
+        const category =
+          card.dataset.category;
+
+        const searchable =
+          card.dataset.search;
+
+        const categoryMatch =
+          currentFilter === "semua" ||
+          category === currentFilter;
+
+        const searchMatch =
+          searchable.includes(keyword);
+
+        if (
+          categoryMatch &&
+          searchMatch
+        ) {
+
+          card.style.display = "flex";
+
+          visibleCount++;
+
+        } else {
+
+          card.style.display = "none";
+
+        }
+
+      });
+
+
+      if (visibleCount === 0) {
+
+        emptyMessage.style.display =
+          "block";
+
+      } else {
+
+        emptyMessage.style.display =
+          "none";
+
+      }
+
+    }
+
+
+    /* TOMBOL FILTER */
+
+    buttons.forEach(function(button) {
+
+      button.addEventListener(
+        "click",
+        function() {
+
+          buttons.forEach(function(btn) {
+
+            btn.classList.remove("active");
+
+          });
+
+          button.classList.add("active");
+
+          currentFilter =
+            button.dataset.filter;
+
+          filterPoems();
+
+        }
+      );
+
+    });
+
+
+    /* SEARCH */
+
+    searchInput.addEventListener(
+      "input",
+      filterPoems
+    );
+
+  </script>
+
+
+</body>
+</html>
+```
 
